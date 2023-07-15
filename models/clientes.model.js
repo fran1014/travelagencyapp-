@@ -4,48 +4,48 @@ const getAll = () => {
   return db.query(`SELECT * FROM ${agencia_viajes.clientes}`);
 };
 
-const getById = (clienteId) => {
+const getById = (clientesId) => {
   return db.query(`SELECT * FROM ${agencia_viajes.clientes} WHERE id = ?`, [
     clienteId,
   ]);
 };
 
 const create = ({
-  nombre,
-  apellidos,
-  direccion,
-  telefono,
-  fecha_nacimiento,
+  name,
+  surname,
+  address,
+  telephonenumber,
+  dateofbirth,
   email,
   dni,
 }) => {
   return db.query(
     `INSERT INTO ${agencia_viajes} ( nombre, apellidos, direccion, telefono, fecha_nacimiento, email, dni) VALUES ( ?, ?, ?, ?, ?, ?,? )`,
-    [nombre, apellidos, direccion, telefono, fecha_nacimiento, email, dni]
+    [name, surname, address, telephonenumber, dateofbirth, email, dni]
   );
 };
 
-const deleteClientById = (clienteId) => {
-  return db.query(`DELETE FROM ${agencia_viajes} WHERE id=?`, [clienteId]);
+const deleteClientById = (clientesId) => {
+  return db.query(`DELETE FROM ${agencia_viajes} WHERE id=?`, [clientesId]);
 };
 
 const update = (
   clienteId,
-  { nombre, apellidos, direccion, telefono, fecha_nacimiento, email, dni }
+  { name, surname, address, telephonenumber, dateofbirth, email, dni }
 ) => {
   return db.query(
     `UPDATE ${agencia_viajes} SET clientes.nombre = ?, clientes.apellidos = ?, clientes.direccion = ?, clientes.telefono = ?, clientes.fecha_nacimiento = ?, clientes.email = ?, clientes.dni = ? WHERE clientes.id = ?;`,
     [
-      nombre,
-      apellidos,
-      direccion,
-      telefono,
-      fecha_nacimiento,
+      name,
+      surname,
+      address,
+      telephonenumber,
+      dateofbirth,
       email,
       dni,
-      clienteId,
+      clientesId,
     ]
   );
 };
 
-module.exports = { getAll, getById, create, deleteClientById, update };
+module.exports = { getAll, getById, create, deleteClientesById, update };

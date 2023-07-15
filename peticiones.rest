@@ -49,7 +49,7 @@
 ### POST {{host}}{{urlViajes}} 
 
 {
-"departure_date": "2023-11-12 05:00:00.00", "arrival_date": "2023-12-03 12:01:02.00", "id_vuelo_ida": "TX2434", "id_vuelo_vuelta": "UP4361", "hotel": "St Puig", "clientes_id": 2, "hotel_id": 3
+"departure_date": "2023-11-12 05:00:00.00", "arrival_date": "2023-12-03 12:01:02.00", "id_flight_deaparture": "TX2434", "id_flight_return": "UP4361", "hotel": "St Puig", "clientes_id": 2, "hotel_id": 3
 }
 
 ### DELETE {{host}}{{urlViajes}}/2
