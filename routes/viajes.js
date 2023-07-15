@@ -6,7 +6,7 @@ const {
   deleteTravelById,
   update,
   updateById,
-} = require("../../models/viaje.model");
+} = require("../../models/viajes.model");
 
 // Peticiones GET
 
@@ -64,8 +64,8 @@ router.put("/update/:id", async (req, res) => {
 
 router.put("/:viajeId/cliente/:clienteId", async (req, res) => {
   try {
-    const { viajeId, clienteId } = req.params;
-    const [result] = await updateById(Number(viajeId), Number(clienteId));
+    const { viajesId, clienteId } = req.params;
+    const [result] = await updateById(Number(viajesId), Number(clienteId));
     res.json(result);
   } catch (error) {
     res.json({ fatal: error.message });

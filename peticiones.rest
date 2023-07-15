@@ -1,53 +1,55 @@
 @host = http://localhost:3000 @urlClientes = /api/clientes
 
 @urlHoteles = /api/hoteles
-
+@urlClientes=/api/clientes
 @urlViajes = /api/viajes
 
-##### API de Clientes ##### # GET http://localhost:3000/api/clientes GET {{host}}{{urlClientes}}
 
-### GET {{host}}{{urlClientes}}/9
-
-### POST {{host}}{{urlClientes}} Content-Type: application/json
-
-{
-"nombre": "Mark", "apellidos": "Williams", "direccion": "Goya 56", "telefono": "644544226", "fecha_nacimiento": "1979-01-17 23:01:30.00", "email": "frank1@gmail.com", "dni": "50221078F"
-}
-
-### DELETE {{host}}{{urlClientes}}/13
-
-### PUT {{host}}{{urlClientes}}/update/14 Content-Type: application/json
-
-{
-"nombre": "Lewis", "apellidos": "Brunard", "direccion": "Goya 56", "telefono": "644544226", "fecha_nacimiento": "1888-02-17 10:01:00.00", "email": "george10@gmail.com", "dni": "60221078F"
-}
-
-##### API de Hoteles ##### # GET http://localhost:3000/api/hoteles GET {{host}}{{urlHoteles}}
+# GET http://localhost:3000/api/hoteles GET {{host}}{{urlHoteles}}
 
 ### GET {{host}}{{urlHoteles}}/1
 
-### POST {{host}}{{urlHoteles}} Content-Type: application/json
+### POST {{host}}{{urlHoteles}} 
 
 {
-"nombre": "Marriot Hoteles", "direccion": "Nuñez de Balboa", "ciudad": "Madrid", "numero_estrellas": 5, "descripcion": "Hotel con Golf Resort", "tarifa": "170.25"
+"name": "Marriot Hoteles", "address": "Nuñez de Balboa", "city": "Madrid", "stars_number": 5, "description": "Hotel con Golf Resort", "price": "170.25"
 }
 
 ### DELETE {{host}}{{urlHoteles}}/2
 
-### PUT {{host}}{{urlHoteles}}/update/3 Content-Type: application/json
+### PUT {{host}}{{urlHoteles}}/update/3 
 
 {
-"nombre": "St Puig", "direccion": "Las Ramblas", "ciudad": "Barcelona", "numero_estrellas": 3, "descripcion": "El mejor hotel de Valencia", "tarifa": "220.60"
+"name": "St Puig", "address": "Las Ramblas", "city": "Barcelona", "stars_number": 3, "description": "El mejor hotel de Valencia", "price": "220.60"
+}
+
+
+# GET http://localhost:3000/api/clientes GET {{host}}{{urlClientes}}
+
+### GET {{host}}{{urlClientes}}/
+
+### POST {{host}}{{urlClientes}} 
+
+{
+"name": "Mark", "surname": "Williams", "address": "Goya 56", "telephone number": "644544226", "dateofbirth": "1979-01-17 23:01:30.00", "email": "frank1@gmail.com", "dni": "50221078F"
+}
+
+### DELETE {{host}}{{urlClientes}}/13
+
+### PUT {{host}}{{urlClientes}}/update/14 
+
+{
+"name": "Lewis", "surname": "Brunard", "address": "Goya 56", "telephone number": "644544226", "dateofbirth": "1888-02-17 10:01:00.00", "email": "george10@gmail.com", "dni": "60221078F"
 }
 
 ##### API de Viajes ##### # GET http://localhost:3000/api/viajes GET {{host}}{{urlViajes}}
 
 ### GET {{host}}{{urlViajes}}/1
 
-### POST {{host}}{{urlViajes}} Content-Type: application/json
+### POST {{host}}{{urlViajes}} 
 
 {
-"fecha_salida": "2023-11-12 05:00:00.00", "fecha_vuelta": "2023-12-03 12:01:02.00", "id_vuelo_ida": "TX2434", "id_vuelo_vuelta": "UP4361", "hotel": "St Puig", "clientes_id": 2, "hotel_id": 3
+"departure_date": "2023-11-12 05:00:00.00", "arrival_date": "2023-12-03 12:01:02.00", "id_vuelo_ida": "TX2434", "id_vuelo_vuelta": "UP4361", "hotel": "St Puig", "clientes_id": 2, "hotel_id": 3
 }
 
 ### DELETE {{host}}{{urlViajes}}/2
@@ -55,8 +57,8 @@
 ### PUT {{host}}{{urlViajes}}/update/3 Content-Type: application/json
 
 {
-"fecha_salida": "2023-01-03 08:00:00.00", "fecha_vuelta": "2024-02-03 06:00:00.00", "id_vuelo_ida": "XX1234", "id_vuelo_vuelta": "JP5555", "hotel": "Marriot Hoteles", "clientes_id": 1, "hotel_id": 1
+"departure_date": "2023-01-03 08:00:00.00", "arrival_date": "2024-02-03 06:00:00.00", "id_flight_departure": "XX1234", "id_flight_return": "JP5555", "hotel": "Marriot Hoteles", "clientes_id": 1, "hotel_id": 1
 }
 
-### Petición de asociación viaje con cliente PUT {{host}}{{urlViajes}}/1/cliente/1
+### Petición PUT {{host}}{{urlViajes}}/1/cliente/1
 

@@ -5,7 +5,7 @@ const {
   create,
   deleteHotelById,
   update,
-} = require("../../models/hotel.model");
+} = require("../../models/hoteles.model");
 
 // Peticiones GET
 

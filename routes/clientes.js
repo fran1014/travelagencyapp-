@@ -3,9 +3,9 @@ const {
   getAll,
   getById,
   create,
-  deleteClientById,
   update,
-} = require("../../models/cliente.model");
+  deleteClientesById,
+} = require("../../models/clientes.model");
 
 // Peticiones GET
 
@@ -42,7 +42,7 @@ router.post("/", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    const [result] = await deleteClientById(Number(req.params.id));
+    const [result] = await deleteClientesById(Number(req.params.id));
     res.json(result);
   } catch (error) {
     res.json({ fatal: error.message });
